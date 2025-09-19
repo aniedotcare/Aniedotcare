@@ -1,0 +1,78 @@
+{
+  "name": "Anie Denaud — Doula",
+  "contact": {
+    "email": "anie.care@gmail.com",
+    "phone": "347-228-6096"
+  },
+  "location": "Brooklyn, NY",
+  "voice": "warm, calm, professional, empathetic (first-person)",
+  "assets": {
+    "logo": null,
+    "brand_colors": {
+      "primary": "#A96B4B",
+      "accent": "#F3DCC4",
+      "dark_text": "#21333D",
+      "muted_gray": "#6B7C86"
+    },
+    "photos": [
+      {
+        "type": "hero",
+        "source": "Unsplash",
+        "url": "https://images.unsplash.com/photo-1470116945706-e6bf5d5a53ca",
+        "description": "person holding baby's index finger"
+      },
+      {
+        "type": "headshot",
+        "source": "placeholder",
+        "description": "A warm, professional headshot of Anie Denaud."
+      },
+      {
+        "type": "with_families",
+        "source": "placeholder",
+        "description": "Candid, warm shots of Anie with families and newborns."
+      },
+      {
+        "type": "local_detail",
+        "source": "placeholder",
+        "description": "A detail shot of Brooklyn, e.g., a brownstone, a park."
+      }
+    ],
+    "testimonials": [
+      {
+        "quote": "{{TODO: Add client testimonial here.}}",
+        "author": "{{TODO: Add client name here.}}"
+      },
+      {
+        "quote": "{{TODO: Add client testimonial here.}}",
+        "author": "{{TODO: Add client name here.}}"
+      }
+    ],
+    "services": [
+      {
+        "name": "Prenatal Support",
+        "details": "Birth planning, comfort techniques, partner coaching."
+      },
+      {
+        "name": "Labor & Birth Support",
+        "details": "Continuous in-person support (advocacy, comfort, positions, breathing)."
+      },
+      {
+        "name": "Postpartum Support",
+        "details": "Feeding support, newborn basics, emotional & practical care."
+      },
+      {
+        "name": "Childbirth Education",
+        "details": "Private classes for partners and families."
+      }
+    ]
+  },
+  "platform": {
+    "name": "Static Site (HTML/CSS)",
+    "hosting": "GitHub Pages / Netlify",
+    "reasoning": "Chosen for simplicity, security, and low cost. As I cannot use Webflow or Squarespace, this is the best option for a non-technical client that I can provide."
+  },
+  "booking_and_payments": {
+    "booking": "Calendly (placeholder link to be provided by client)",
+    "payments": "Stripe Checkout (placeholder links to be provided by client)"
+  }
+}

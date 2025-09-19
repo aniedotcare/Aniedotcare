@@ -1,0 +1,44 @@
+{
+  "home": {
+    "title": "Anie Denaud — Doula in Brooklyn, NY | Prenatal • Birth • Postpartum",
+    "description": "Brooklyn doula offering compassionate prenatal coaching, hands-on labor support, and postpartum care. Book a free consult: 347-228-6096."
+  },
+  "about": {
+    "title": "About Anie Denaud — Brooklyn Doula",
+    "description": "Learn about Anie Denaud's experience, training, and philosophy as a doula serving families in Brooklyn, NY."
+  },
+  "services": {
+    "title": "Doula Services in Brooklyn, NY — Anie Denaud",
+    "description": "Explore prenatal, birth, and postpartum doula services offered by Anie Denaud in Brooklyn, NY. Packages available to support your journey."
+  },
+  "testimonials": {
+    "title": "Testimonials — Anie Denaud, Brooklyn Doula",
+    "description": "Read what families in Brooklyn have to say about their experience with doula Anie Denaud."
+  },
+  "faq": {
+    "title": "FAQ — Anie Denaud, Brooklyn Doula",
+    "description": "Find answers to frequently asked questions about doula services with Anie Denaud in Brooklyn, NY."
+  },
+  "blog": {
+    "title": "Blog & Resources — Anie Denaud, Brooklyn Doula",
+    "description": "A collection of resources and articles for expectant parents in Brooklyn, from doula Anie Denaud."
+  },
+  "contact": {
+    "title": "Contact Anie Denaud — Book a Free Doula Consult in Brooklyn",
+    "description": "Contact Anie Denaud to book a free 20-minute doula consultation. Serving Brooklyn and surrounding NYC boroughs."
+  },
+  "legal": {
+    "privacy_policy": {
+      "title": "Privacy Policy — Anie Denaud",
+      "description": "Our privacy policy outlines how we handle your personal information."
+    },
+    "terms_of_service": {
+      "title": "Terms of Service — Anie Denaud",
+      "description": "Read our terms of service."
+    },
+    "disclaimer": {
+      "title": "Disclaimer — Anie Denaud",
+      "description": "Please read our disclaimer regarding the information on this website."
+    }
+  }
+}
