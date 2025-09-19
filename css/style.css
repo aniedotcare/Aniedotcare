@@ -134,3 +134,28 @@ form input, form textarea {
 form button {
     align-self: flex-start;
 }
+
+/* About Anie Section */
+#about-anie {
+    background: #fff;
+    padding: 40px 20px;
+}
+
+.about-anie-content {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    max-width: 900px;
+    margin: auto;
+}
+
+.headshot {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.bio {
+    flex: 1;
+}
