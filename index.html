@@ -22,7 +22,7 @@
       "name": "Anie Denaud — Doula",
       "description": "Brooklyn-based doula providing prenatal, labor and postpartum support.",
       "telephone": "347-228-6096",
-      "email": "aniedenaud+care@gmail.com",
+      "email": "anie.care@gmail.com",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Brooklyn",
@@ -30,8 +30,8 @@
         "addressCountry": "US"
       },
       "areaServed": "Brooklyn, NY",
-      "url": "https://anie.care",
-      "image": "/images/profilepic.jpg"
+      "url": "https://www.aniedenaud-doula.com",
+      "image": "images/profilepic.jpg"
     }
     </script>
 
@@ -281,7 +281,7 @@
                 <h2 class="text-4xl md:text-5xl font-bold">Ready to feel more confident about your birth?</h2>
                 <p class="mt-4 max-w-2xl mx-auto text-lg text-sand">I offer a free, no-obligation 20-minute consult to see if we’re a good fit. Let's chat about your hopes for your birth and how I can support you.</p>
                 <div class="mt-10">
-                    <a href="mailto:anie.care@gmail.com" class="bg-cream text-sage px-8 py-4 rounded-full font-semibold hover:bg-sand transition shadow-lg transform hover:scale-105">Book Your Free Consult</a>
+                    <a href="mailto:aniedenaud+care@gmail.com" class="bg-cream text-sage px-8 py-4 rounded-full font-semibold hover:bg-sand transition shadow-lg transform hover:scale-105">Book Your Free Consult</a>
                 </div>
                 <p class="mt-6 text-sand">or call me at 347-228-6096</p>
             </div>
@@ -407,7 +407,7 @@
             Please provide gentle suggestions I can discuss with my care provider, formatted in Markdown.`;
 
             const payload = {
-                contents: [{ parts: [{ text: userQuery }] }],
+                contents: [{ role: "user", parts: [{ text: userQuery }] }],
                 systemInstruction: { parts: [{ text: systemPrompt }] },
             };
 
@@ -431,6 +431,8 @@
     </script>
 </body>
 </html>
+
+
 
 
 
