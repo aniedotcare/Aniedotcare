@@ -368,7 +368,10 @@
                         headers: { 'Content-Type': 'application/json' },
                         body: JSON.stringify(payload)
                     });
-                    if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+                    if (!response.ok) {
+                        const errorText = await response.text();
+                        throw new Error(`HTTP error! Status: ${response.status}. Response: ${errorText}`);
+                    }
                     return await response.json();
                 } catch (error) {
                     if (i === retries - 1) throw error;
@@ -413,11 +416,21 @@
                 if (text) {
                     planResults.innerHTML = convertMarkdownToHTML(text);
                 } else {
-                    throw new Error("Invalid API response structure.");
+                    throw new Error("Invalid API response structure. The response was successful but contained no text.");
                 }
             } catch (error) {
                 console.error("Error fetching birth plan ideas:", error);
-                planResults.innerHTML = '<p>I\'m sorry, I couldn\'t generate ideas at the moment. Please check your connection and try again later.</p>';
+                let friendlyMessage = "I'm sorry, I couldn't generate ideas at the moment.";
+                
+                if (error instanceof TypeError) { // Often indicates a network or CORS error
+                    friendlyMessage += " This appears to be a network error. Please check that the server at api.oneroot.media has CORS configured to allow requests from anie.care.";
+                } else if (error.message.includes('HTTP error!')) {
+                    friendlyMessage += " The API server responded with an error.";
+                } else {
+                    friendlyMessage += " Please check your connection and try again later.";
+                }
+
+                planResults.innerHTML = `<p class="text-red-700 font-semibold">${friendlyMessage}</p><p class="text-xs text-gray-600 mt-2 bg-gray-100 p-2 rounded"><strong>Details:</strong> ${error.message}</p>`;
             } finally {
                 loadingIndicator.classList.add('hidden');
                 planResults.classList.remove('hidden');
