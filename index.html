@@ -5,15 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Anie Denaud — Doula in Brooklyn, NY | Prenatal • Birth • Postpartum</title>
     <meta name="description" content="Brooklyn doula offering compassionate prenatal coaching, hands-on labor support, and postpartum care. Book a free consult: 347-228-6096.">
-
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-
+    
+    <!-- Tailwind CSS with Typography Plugin -->
+    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+    
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+    
     <!-- Schema.org Markup -->
     <script type="application/ld+json">
     {
@@ -31,175 +31,243 @@
       },
       "areaServed": "Brooklyn, NY",
       "url": "https://www.aniedenaud-doula.com",
-      "image": "https://placehold.co/600x400/F4E9E1/333333?text=Anie+Denaud"
+      "image": "images/profilepic.jpg"
     }
     </script>
 
     <style>
         body {
-            font-family: 'Inter', sans-serif;
-            background-color: #FAF7F5;
-            color: #4A4A4A;
+            font-family: 'Montserrat', sans-serif;
+            background-color: #FBF9F6; /* Cream */
+            color: #3D403D; /* Charcoal */
         }
         h1, h2, h3, h4, h5, h6 {
-            font-family: 'Lora', serif;
+            font-family: 'Playfair Display', serif;
         }
-        .bg-primary { background-color: #8D9B87; }
-        .text-primary { color: #8D9B87; }
-        .border-primary { border-color: #8D9B87; }
-        .bg-secondary { background-color: #F4E9E1; }
-        .text-secondary { color: #F4E9E1; }
-        .bg-accent { background-color: #D4B499; }
-        .text-accent { color: #D4B499; }
+        .bg-sage { background-color: #A8B8A2; }
+        .text-sage { color: #A8B8A2; }
+        .border-sage { border-color: #A8B8A2; }
+        .bg-sand { background-color: #EAE2D9; }
+        .text-sand { color: #EAE2D9; }
+        .bg-rust { background-color: #B98B73; }
+        .text-rust { color: #B98B73; }
+        .bg-cream { background-color: #FBF9F6; }
+        .text-charcoal { color: #3D403D; }
+
+        .faq-question[aria-expanded="true"] svg {
+            transform: rotate(180deg);
+        }
+        /* Custom styles for generated content */
+        #plan-results h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+        #plan-results ul {
+            list-style-position: inside;
+            padding-left: 1rem;
+        }
+         #plan-results li {
+            margin-bottom: 0.5rem;
+        }
     </style>
 </head>
 <body class="antialiased">
 
     <!-- Header -->
-    <header class="bg-white/80 backdrop-blur-lg sticky top-0 z-50 shadow-sm">
+    <header class="bg-cream/80 backdrop-blur-lg sticky top-0 z-50 shadow-sm">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#" class="text-xl font-bold text-gray-800">Anie Denaud</a>
+            <a href="#" class="text-2xl font-semibold text-charcoal tracking-wider">Anie Denaud</a>
             <div class="hidden md:flex space-x-8 items-center">
-                <a href="#about" class="text-gray-600 hover:text-primary transition">About</a>
-                <a href="#services" class="text-gray-600 hover:text-primary transition">Services</a>
-                <a href="#testimonials" class="text-gray-600 hover:text-primary transition">Testimonials</a>
-                <a href="#faq" class="text-gray-600 hover:text-primary transition">FAQ</a>
-                <a href="#contact" class="bg-primary text-white px-4 py-2 rounded-full hover:bg-opacity-90 transition shadow">Contact</a>
+                <a href="#about" class="text-charcoal/70 hover:text-sage transition">About</a>
+                <a href="#services" class="text-charcoal/70 hover:text-sage transition">Services</a>
+                <a href="#testimonials" class="text-charcoal/70 hover:text-sage transition">Testimonials</a>
+                <a href="#birth-plan" class="text-charcoal/70 hover:text-sage transition">Birth Plan Ideas</a>
+                <a href="#faq" class="text-charcoal/70 hover:text-sage transition">FAQ</a>
+                <a href="#contact" class="bg-sage text-white px-5 py-2 rounded-full hover:bg-opacity-90 transition shadow-sm font-semibold">Contact</a>
             </div>
             <div class="md:hidden">
-                <button id="menu-btn" class="text-gray-800 focus:outline-none">
+                <button id="menu-btn" class="text-charcoal focus:outline-none">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
                 </button>
             </div>
         </nav>
         <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden">
-            <a href="#about" class="block py-2 px-6 text-sm text-gray-700 hover:bg-gray-100">About</a>
-            <a href="#services" class="block py-2 px-6 text-sm text-gray-700 hover:bg-gray-100">Services</a>
-            <a href="#testimonials" class="block py-2 px-6 text-sm text-gray-700 hover:bg-gray-100">Testimonials</a>
-            <a href="#faq" class="block py-2 px-6 text-sm text-gray-700 hover:bg-gray-100">FAQ</a>
-            <a href="#contact" class="block py-2 px-6 text-sm text-gray-700 hover:bg-gray-100">Contact</a>
+        <div id="mobile-menu" class="hidden md:hidden bg-cream border-t border-sand">
+            <a href="#about" class="block py-3 px-6 text-sm text-charcoal/80 hover:bg-sand">About</a>
+            <a href="#services" class="block py-3 px-6 text-sm text-charcoal/80 hover:bg-sand">Services</a>
+            <a href="#testimonials" class="block py-3 px-6 text-sm text-charcoal/80 hover:bg-sand">Testimonials</a>
+            <a href="#birth-plan" class="block py-3 px-6 text-sm text-charcoal/80 hover:bg-sand">Birth Plan Ideas</a>
+            <a href="#faq" class="block py-3 px-6 text-sm text-charcoal/80 hover:bg-sand">FAQ</a>
+            <a href="#contact" class="block py-3 px-6 text-sm text-charcoal/80 hover:bg-sand">Contact</a>
         </div>
     </header>
 
     <main>
         <!-- Hero Section -->
-        <section class="bg-secondary py-20 sm:py-32">
-            <div class="container mx-auto px-6 text-center">
-                <h1 class="text-4xl md:text-6xl font-bold text-gray-800 leading-tight">Calm, Experienced Doula Care in Brooklyn</h1>
-                <p class="mt-4 max-w-2xl mx-auto text-lg text-gray-600">Personalized support for your pregnancy, birth, and early postpartum journey — evidence-based, compassionate, and partner-inclusive.</p>
-                <div class="mt-8 flex justify-center gap-4 flex-wrap">
-                    <a href="#contact" class="bg-primary text-white px-8 py-3 rounded-full font-semibold hover:bg-opacity-90 transition shadow-lg transform hover:scale-105">Book a Free Consult</a>
-                    <a href="#services" class="bg-white text-primary border border-primary px-8 py-3 rounded-full font-semibold hover:bg-gray-50 transition shadow-lg transform hover:scale-105">Learn About Services</a>
+        <section class="relative bg-sand min-h-[60vh] flex items-center">
+            <div class="absolute inset-0">
+                <img src="https://images.pexels.com/photos/3932930/pexels-photo-3932930.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" class="w-full h-full object-cover opacity-30" alt="Soft focus background of a calm nursery">
+            </div>
+            <div class="relative container mx-auto px-6 text-center">
+                <h1 class="text-5xl md:text-7xl font-semibold text-charcoal leading-tight">Empathetic Doula Care for Your Journey</h1>
+                <p class="mt-4 max-w-2xl mx-auto text-lg text-charcoal/80">Guiding Brooklyn families with compassionate, evidence-based support through pregnancy, birth, and early parenthood.</p>
+                <div class="mt-10 flex justify-center gap-4 flex-wrap">
+                    <a href="#contact" class="bg-sage text-white px-8 py-4 rounded-full font-semibold hover:bg-opacity-90 transition shadow-lg transform hover:scale-105">Book a Free Consultation</a>
+                    <a href="#services" class="bg-cream text-sage border border-sage px-8 py-4 rounded-full font-semibold hover:bg-sand transition shadow-lg transform hover:scale-105">Explore My Services</a>
                 </div>
             </div>
         </section>
 
         <!-- About Section -->
-        <section id="about" class="py-20 sm:py-24">
+        <section id="about" class="py-24 sm:py-32">
             <div class="container mx-auto px-6">
-                <div class="flex flex-col md:flex-row items-center gap-12 md:gap-16">
+                <div class="flex flex-col md:flex-row items-center gap-12 md:gap-20">
                     <div class="md:w-1/3">
-                        <img src="images/profilepic.jpg" alt="Anie Denaud, a friendly and professional doula" class="rounded-lg shadow-2xl w-full h-auto object-cover aspect-square">
+                        <div class="bg-sand p-3 rounded-lg shadow-2xl">
+                            <img src="images/profilepic.jpg" alt="Anie Denaud, a friendly and professional doula" class="rounded-lg w-full h-auto object-cover aspect-square">
+                        </div>
                     </div>
                     <div class="md:w-2/3 text-center md:text-left">
-                        <h2 class="text-3xl font-bold text-gray-800">Hi, I’m Anie Denaud</h2>
-                        <p class="mt-4 text-lg text-gray-600">As a Brooklyn-based doula, my passion is to provide unwavering emotional, physical, and informational support to growing families. I believe every birthing person deserves to feel safe, respected, and empowered. My role is to help you navigate your options, advocate for your wishes, and build confidence for a positive birth and postpartum experience.</p>
-                        <p class="mt-4 text-gray-600">With a calming presence and a deep well of knowledge in comfort measures, I'm here to support not just the birthing parent, but partners and family as well, ensuring everyone feels prepared and included.</p>
+                        <h2 class="text-4xl md:text-5xl font-bold text-charcoal">Hi, I’m Anie Denaud</h2>
+                        <p class="mt-6 text-lg text-charcoal/80">As a Brooklyn-based doula, my passion is to provide unwavering emotional, physical, and informational support to growing families. I believe every birthing person deserves to feel safe, respected, and empowered. My role is to help you navigate your options, advocate for your wishes, and build confidence for a positive birth and postpartum experience.</p>
+                        <p class="mt-4 text-charcoal/80">With a calming presence and a deep well of knowledge in comfort measures, I'm here to support not just the birthing parent, but partners and family as well, ensuring everyone feels prepared and included.</p>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Services Section -->
-        <section id="services" class="bg-white py-20 sm:py-24">
+        <section id="services" class="bg-sand py-24 sm:py-32">
             <div class="container mx-auto px-6">
-                <div class="text-center mb-12">
-                    <h2 class="text-3xl font-bold text-gray-800">My Services</h2>
-                    <p class="mt-2 text-lg text-gray-600 max-w-2xl mx-auto">Comprehensive support tailored to your unique needs.</p>
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl font-bold text-charcoal">My Services</h2>
+                    <p class="mt-4 text-lg text-charcoal/80 max-w-2xl mx-auto">Comprehensive support tailored to your unique needs.</p>
                 </div>
-                <div class="grid md:grid-cols-3 gap-8">
-                    <!-- Service Card 1 -->
-                    <div class="bg-secondary rounded-lg p-8 text-center shadow-lg hover:shadow-xl transition-shadow duration-300">
-                        <div class="flex justify-center mb-4">
-                            <svg class="w-12 h-12 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
-                        </div>
-                        <h3 class="text-xl font-bold text-gray-800">Prenatal Support</h3>
-                        <p class="mt-2 text-gray-600">Two prenatal visits to discuss your birth preferences, practice comfort techniques, and ensure you and your partner feel fully prepared.</p>
+                <div class="grid md:grid-cols-3 gap-10">
+                    <div class="bg-cream rounded-lg p-8 text-center shadow-lg hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-2">
+                         <div class="flex justify-center mb-5"> <img src="https://placehold.co/80x80/A8B8A2/FFFFFF?text=🤰" alt="Prenatal icon" class="rounded-full"/> </div>
+                        <h3 class="text-2xl font-semibold text-charcoal">Prenatal Support</h3>
+                        <p class="mt-3 text-charcoal/70">Two prenatal visits to discuss your birth preferences, practice comfort techniques, and ensure you and your partner feel fully prepared.</p>
                     </div>
-                    <!-- Service Card 2 -->
-                    <div class="bg-secondary rounded-lg p-8 text-center shadow-lg hover:shadow-xl transition-shadow duration-300">
-                         <div class="flex justify-center mb-4">
-                            <svg class="w-12 h-12 text-accent" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M12 12a5 5 0 1 0 0-10 5 5 0 0 0 0 10z"/><path d="M12 12a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/></svg>
-                        </div>
-                        <h3 class="text-xl font-bold text-gray-800">Labor & Birth Support</h3>
-                        <p class="mt-2 text-gray-600">Continuous in-person support from the moment you need me in active labor, providing comfort, advocacy, and guidance at your home, birth center, or hospital.</p>
+                    <div class="bg-cream rounded-lg p-8 text-center shadow-lg hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-2">
+                         <div class="flex justify-center mb-5"> <img src="https://placehold.co/80x80/A8B8A2/FFFFFF?text=🧘‍♀️" alt="Labor icon" class="rounded-full"/> </div>
+                        <h3 class="text-2xl font-semibold text-charcoal">Labor & Birth Support</h3>
+                        <p class="mt-3 text-charcoal/70">Continuous in-person support from the moment you need me in active labor, providing comfort, advocacy, and guidance.</p>
                     </div>
-                    <!-- Service Card 3 -->
-                    <div class="bg-secondary rounded-lg p-8 text-center shadow-lg hover:shadow-xl transition-shadow duration-300">
-                        <div class="flex justify-center mb-4">
-                            <svg class="w-12 h-12 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.5 9.5a5.5 5.5 0 11-11 0 5.5 5.5 0 0111 0zM9 16.5v4m0-4a3 3 0 10-3 3h3zm6 0v4m0-4a3 3 0 113 3h-3z"></path></svg>
-                        </div>
-                        <h3 class="text-xl font-bold text-gray-800">Postpartum Support</h3>
-                        <p class="mt-2 text-gray-600">One postpartum visit to process your birth, offer feeding support, answer newborn care questions, and ensure your family is adjusting smoothly.</p>
+                    <div class="bg-cream rounded-lg p-8 text-center shadow-lg hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-2">
+                        <div class="flex justify-center mb-5"> <img src="https://placehold.co/80x80/A8B8A2/FFFFFF?text=👶" alt="Postpartum icon" class="rounded-full"/> </div>
+                        <h3 class="text-2xl font-semibold text-charcoal">Postpartum Support</h3>
+                        <p class="mt-3 text-charcoal/70">One postpartum visit to process your birth, offer feeding support, and answer newborn care questions for a smooth transition.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Testimonials Section -->
+        <section id="testimonials" class="py-24 sm:py-32">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl font-bold text-charcoal">What Families Are Saying</h2>
+                </div>
+                <div class="grid md:grid-cols-2 gap-10 max-w-5xl mx-auto">
+                    <div class="bg-white p-8 rounded-lg shadow-lg relative">
+                        <div class="absolute top-0 left-0 -mt-4 -ml-4 text-sand text-8xl font-serif opacity-50">“</div>
+                        <p class="text-charcoal/80 italic z-10 relative">"Anie was our rock. Her calm and reassuring presence made all the difference during a long labor. She knew exactly what to do and say to help me through each contraction. We couldn't have done it without her."</p>
+                        <footer class="mt-6 font-semibold text-charcoal">- Jessica & Tom, Park Slope</footer>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg shadow-lg relative">
+                        <div class="absolute top-0 left-0 -mt-4 -ml-4 text-sand text-8xl font-serif opacity-50">“</div>
+                        <p class="text-charcoal/80 italic z-10 relative">"As a partner, I felt so much more useful and confident with Anie's guidance. She taught me how to provide effective support and worked with us as a team. Her postpartum visit was also incredibly helpful."</p>
+                        <footer class="mt-6 font-semibold text-charcoal">- David L., Williamsburg</footer>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Testimonials Section -->
-        <section id="testimonials" class="py-20 sm:py-24">
-            <div class="container mx-auto px-6">
-                <div class="text-center mb-12">
-                    <h2 class="text-3xl font-bold text-gray-800">What Families Are Saying</h2>
+        <!-- Birth Plan AI Assistant Section -->
+        <section id="birth-plan" class="bg-sand py-24 sm:py-32">
+            <div class="container mx-auto px-6 max-w-4xl">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl font-bold text-charcoal">Birth Plan Ideas ✨</h2>
+                    <p class="mt-4 text-lg text-charcoal/80 max-w-3xl mx-auto">Feeling unsure where to start with your birth plan? Answer a few questions below, and our AI assistant will offer some gentle, personalized suggestions to inspire you.</p>
                 </div>
-                <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                    <div class="bg-white p-8 rounded-lg shadow-md">
-                        <p class="text-gray-600 italic">"Anie was our rock. Her calm and reassuring presence made all the difference during a long labor. She knew exactly what to do and say to help me through each contraction. We couldn't have done it without her."</p>
-                        <footer class="mt-4 font-semibold text-gray-700">- Jessica & Tom, Park Slope</footer>
+
+                <div class="bg-cream p-8 md:p-12 rounded-lg shadow-lg">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="atmosphere" class="block text-sm font-semibold text-charcoal mb-2">What atmosphere do you envision?</label>
+                            <textarea id="atmosphere" rows="3" class="w-full p-3 rounded-md border border-sand focus:ring-sage focus:border-sage transition" placeholder="e.g., calm and quiet, with dim lights and soft music..."></textarea>
+                        </div>
+                        <div>
+                            <label for="comfort" class="block text-sm font-semibold text-charcoal mb-2">Priorities for comfort/pain management?</label>
+                            <textarea id="comfort" rows="3" class="w-full p-3 rounded-md border border-sand focus:ring-sage focus:border-sage transition" placeholder="e.g., hoping to use natural methods like breathing and movement..."></textarea>
+                        </div>
+                        <div>
+                            <label for="partner" class="block text-sm font-semibold text-charcoal mb-2">How would you like your partner involved?</label>
+                            <textarea id="partner" rows="3" class="w-full p-3 rounded-md border border-sand focus:ring-sage focus:border-sage transition" placeholder="e.g., providing hands-on support, words of encouragement..."></textarea>
+                        </div>
+                        <div>
+                            <label for="anxiety" class="block text-sm font-semibold text-charcoal mb-2">Is there anything you're anxious about?</label>
+                            <textarea id="anxiety" rows="3" class="w-full p-3 rounded-md border border-sand focus:ring-sage focus:border-sage transition" placeholder="e.g., the pain, not knowing what to expect, hospital policies..."></textarea>
+                        </div>
                     </div>
-                    <div class="bg-white p-8 rounded-lg shadow-md">
-                        <p class="text-gray-600 italic">"As a partner, I felt so much more useful and confident with Anie's guidance. She taught me how to provide effective support and worked with us as a team. Her postpartum visit was also incredibly helpful."</p>
-                        <footer class="mt-4 font-semibold text-gray-700">- David L., Williamsburg</footer>
+
+                    <div class="mt-8 text-center">
+                        <button id="generate-plan-btn" class="bg-rust text-white px-8 py-4 rounded-full font-semibold hover:bg-opacity-90 transition shadow-lg transform hover:scale-105 inline-flex items-center gap-2">
+                            <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456zM16.898 20.562L16.25 22.5l-.648-1.938a2.25 2.25 0 01-1.465-1.465L12 18.75l1.938-.648a2.25 2.25 0 011.465-1.465L17.25 15l.648 1.938a2.25 2.25 0 011.465 1.465L21.25 18.75l-1.938.648a2.25 2.25 0 01-1.465 1.465z" /></svg>
+                            ✨ Get Birth Plan Ideas
+                        </button>
                     </div>
+                </div>
+
+                <div id="loading-indicator" class="hidden text-center mt-8">
+                    <div class="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-sage"></div>
+                    <p class="mt-2 text-charcoal/80">Thinking... our AI doula is crafting some ideas for you.</p>
+                </div>
+
+                <div id="plan-results" class="hidden mt-12 bg-white p-8 md:p-10 rounded-lg shadow-inner prose-lg max-w-none text-charcoal">
+                    <!-- Gemini API results will be injected here -->
                 </div>
             </div>
         </section>
+
 
         <!-- FAQ Section -->
-        <section id="faq" class="bg-white py-20 sm:py-24">
+        <section id="faq" class="bg-cream py-24 sm:py-32">
             <div class="container mx-auto px-6 max-w-3xl">
-                <div class="text-center mb-12">
-                    <h2 class="text-3xl font-bold text-gray-800">Frequently Asked Questions</h2>
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl font-bold text-charcoal">Frequently Asked Questions</h2>
                 </div>
                 <div class="space-y-4">
                     <!-- FAQ Item 1 -->
-                    <div class="faq-item bg-secondary rounded-lg shadow-sm">
-                        <button class="faq-question w-full flex justify-between items-center text-left p-6 font-semibold text-gray-800">
+                    <div class="faq-item bg-sand/50 rounded-lg shadow-sm overflow-hidden">
+                        <button class="faq-question w-full flex justify-between items-center text-left p-6 font-semibold text-xl text-charcoal" aria-expanded="false">
                             <span>What exactly does a doula do?</span>
-                            <svg class="w-5 h-5 transition-transform transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                            <svg class="w-5 h-5 transition-transform transform shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                         </button>
-                        <div class="faq-answer hidden p-6 pt-0 text-gray-600">
+                        <div class="faq-answer hidden p-6 pt-0 text-charcoal/80">
                             <p>A doula provides continuous physical, emotional, and informational support before, during, and after childbirth. We are non-medical professionals who help families have a safe, memorable, and empowered birthing experience. This can include suggesting comfort measures, helping you understand your options, and providing support to your partner.</p>
                         </div>
                     </div>
                     <!-- FAQ Item 2 -->
-                    <div class="faq-item bg-secondary rounded-lg shadow-sm">
-                        <button class="faq-question w-full flex justify-between items-center text-left p-6 font-semibold text-gray-800">
+                    <div class="faq-item bg-sand/50 rounded-lg shadow-sm overflow-hidden">
+                        <button class="faq-question w-full flex justify-between items-center text-left p-6 font-semibold text-xl text-charcoal" aria-expanded="false">
                             <span>Does a doula replace my partner?</span>
-                            <svg class="w-5 h-5 transition-transform transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                            <svg class="w-5 h-5 transition-transform transform shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                         </button>
-                        <div class="faq-answer hidden p-6 pt-0 text-gray-600">
+                        <div class="faq-answer hidden p-6 pt-0 text-charcoal/80">
                             <p>Absolutely not! A doula's role is to support the entire birth team, including the partner. I work alongside your partner to help them be as involved as they'd like to be, suggesting ways they can help and providing reassurance so they can enjoy the experience without pressure.</p>
                         </div>
                     </div>
                     <!-- FAQ Item 3 -->
-                    <div class="faq-item bg-secondary rounded-lg shadow-sm">
-                        <button class="faq-question w-full flex justify-between items-center text-left p-6 font-semibold text-gray-800">
+                    <div class="faq-item bg-sand/50 rounded-lg shadow-sm overflow-hidden">
+                        <button class="faq-question w-full flex justify-between items-center text-left p-6 font-semibold text-xl text-charcoal" aria-expanded="false">
                             <span>When should I hire a doula?</span>
-                            <svg class="w-5 h-5 transition-transform transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                            <svg class="w-5 h-5 transition-transform transform shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                         </button>
-                        <div class="faq-answer hidden p-6 pt-0 text-gray-600">
+                        <div class="faq-answer hidden p-6 pt-0 text-charcoal/80">
                             <p>It's a good idea to start looking for a doula during your second trimester. This gives you plenty of time to interview a few candidates and find someone you connect with. It also allows time for us to build a relationship and have our prenatal meetings without feeling rushed.</p>
                         </div>
                     </div>
@@ -208,26 +276,26 @@
         </section>
 
         <!-- Contact Section -->
-        <section id="contact" class="bg-primary text-white py-20 sm:py-24">
+        <section id="contact" class="bg-sage text-white py-24 sm:py-32">
             <div class="container mx-auto px-6 text-center">
-                <h2 class="text-3xl font-bold">Ready to feel more confident about your birth?</h2>
-                <p class="mt-4 max-w-2xl mx-auto text-lg text-secondary">I offer a free, no-obligation 20-minute consult to see if we’re a good fit. Let's chat about your hopes for your birth and how I can support you.</p>
-                <div class="mt-8">
-                    <a href="mailto:anie.care@gmail.com" class="bg-white text-primary px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition shadow-lg transform hover:scale-105">Book Your Free Consult</a>
+                <h2 class="text-4xl md:text-5xl font-bold">Ready to feel more confident about your birth?</h2>
+                <p class="mt-4 max-w-2xl mx-auto text-lg text-sand">I offer a free, no-obligation 20-minute consult to see if we’re a good fit. Let's chat about your hopes for your birth and how I can support you.</p>
+                <div class="mt-10">
+                    <a href="mailto:anie.care@gmail.com" class="bg-cream text-sage px-8 py-4 rounded-full font-semibold hover:bg-sand transition shadow-lg transform hover:scale-105">Book Your Free Consult</a>
                 </div>
-                <p class="mt-6 text-secondary">or call me at 347-228-6096</p>
+                <p class="mt-6 text-sand">or call me at 347-228-6096</p>
             </div>
         </section>
     </main>
 
     <!-- Footer -->
-    <footer class="bg-secondary">
-        <div class="container mx-auto px-6 py-8 text-center text-gray-600">
+    <footer class="bg-sand">
+        <div class="container mx-auto px-6 py-8 text-center text-charcoal/70">
             <p>&copy; 2025 Anie Denaud — Doula. All Rights Reserved.</p>
             <p class="text-sm mt-2">
-                <a href="#" class="hover:text-primary">Privacy Policy</a> |
-                <a href="#" class="hover:text-primary">Terms of Service</a> |
-                <a href="#" class="hover:text-primary">Disclaimer</a>
+                <a href="#" class="hover:text-sage">Privacy Policy</a> | 
+                <a href="#" class="hover:text-sage">Terms of Service</a> | 
+                <a href="#" class="hover:text-sage">Disclaimer</a>
             </p>
         </div>
     </footer>
@@ -240,7 +308,6 @@
             mobileMenu.classList.toggle('hidden');
         });
 
-        // Close mobile menu when a link is clicked
         const mobileMenuLinks = mobileMenu.querySelectorAll('a');
         mobileMenuLinks.forEach(link => {
             link.addEventListener('click', () => {
@@ -253,23 +320,117 @@
         faqItems.forEach(item => {
             const question = item.querySelector('.faq-question');
             const answer = item.querySelector('.faq-answer');
-            const icon = question.querySelector('svg');
-
+            
             question.addEventListener('click', () => {
-                const isVisible = !answer.classList.contains('hidden');
-
-                // Optional: Close all other FAQs
-                // faqItems.forEach(otherItem => {
-                //    if (otherItem !== item) {
-                //        otherItem.querySelector('.faq-answer').classList.add('hidden');
-                //        otherItem.querySelector('svg').classList.remove('rotate-180');
-                //    }
-                // });
-
+                const isExpanded = question.getAttribute('aria-expanded') === 'true';
+                question.setAttribute('aria-expanded', !isExpanded);
                 answer.classList.toggle('hidden');
-                icon.classList.toggle('rotate-180');
             });
+        });
+
+        // Gemini API Birth Plan Assistant
+        const generatePlanBtn = document.getElementById('generate-plan-btn');
+        const loadingIndicator = document.getElementById('loading-indicator');
+        const planResults = document.getElementById('plan-results');
+
+        // Simple markdown to HTML converter
+        function convertMarkdownToHTML(markdownText) {
+            const lines = markdownText.split('\n');
+            let html = '';
+            let inList = false;
+
+            for (let i = 0; i < lines.length; i++) {
+                const line = lines[i].trim();
+                if (line.startsWith('### ')) {
+                    if (inList) { html += '</ul>'; inList = false; }
+                    html += `<h3>${line.substring(4)}</h3>`;
+                } else if (line.startsWith('## ')) {
+                    if (inList) { html += '</ul>'; inList = false; }
+                    html += `<h2>${line.substring(3)}</h2>`;
+                } else if (line.startsWith('* ')) {
+                    if (!inList) { html += '<ul>'; inList = true; }
+                    html += `<li>${line.substring(2)}</li>`;
+                } else if (line.length > 0) {
+                    if (inList) { html += '</ul>'; inList = false; }
+                    html += `<p>${line}</p>`;
+                } else {
+                    if (inList) { html += '</ul>'; inList = false; }
+                }
+            }
+            if (inList) { html += '</ul>'; }
+            return html;
+        }
+
+        const callGeminiAPI = async (payload, retries = 3, delay = 1000) => {
+            const apiKey = ""; // This is a placeholder; it will be automatically handled by the environment.
+            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${apiKey}`;
+
+            for (let i = 0; i < retries; i++) {
+                try {
+                    const response = await fetch(apiUrl, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+                    if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+                    return await response.json();
+                } catch (error) {
+                    if (i === retries - 1) throw error;
+                    await new Promise(res => setTimeout(res, delay));
+                    delay *= 2; // Exponential backoff
+                }
+            }
+        };
+
+        generatePlanBtn.addEventListener('click', async () => {
+            const atmosphere = document.getElementById('atmosphere').value.trim();
+            const comfort = document.getElementById('comfort').value.trim();
+            const partner = document.getElementById('partner').value.trim();
+            const anxiety = document.getElementById('anxiety').value.trim();
+
+            if (!atmosphere && !comfort && !partner && !anxiety) {
+                planResults.classList.remove('hidden');
+                planResults.innerHTML = '<p>Please share some of your thoughts in at least one box so I can provide some helpful ideas!</p>';
+                return;
+            }
+
+            loadingIndicator.classList.remove('hidden');
+            planResults.classList.add('hidden');
+            planResults.innerHTML = '';
+
+            const systemPrompt = "You are a warm, compassionate, and experienced doula. Your goal is to provide gentle, empowering, and evidence-based suggestions for a birth plan. You should use supportive and non-judgmental language. Format your response in Markdown, using '###' for headings and '*' for bullet points. Do not give medical advice. Use phrases like 'you might consider' instead of 'you should'. Start with a brief, warm introduction.";
+            const userQuery = `Help me brainstorm some ideas for my birth plan. Here are my thoughts:
+            - Atmosphere: ${atmosphere || 'Not specified'}
+            - Comfort/Pain Management: ${comfort || 'Not specified'}
+            - Partner's Role: ${partner || 'Not specified'}
+            - Anxieties: ${anxiety || 'Not specified'}
+            Please provide gentle suggestions I can discuss with my care provider, formatted in Markdown.`;
+
+            const payload = {
+                contents: [{ parts: [{ text: userQuery }] }],
+                systemInstruction: { parts: [{ text: systemPrompt }] },
+            };
+
+            try {
+                const result = await callGeminiAPI(payload);
+                const text = result.candidates?.[0]?.content?.parts?.[0]?.text;
+                if (text) {
+                    planResults.innerHTML = convertMarkdownToHTML(text);
+                } else {
+                    throw new Error("Invalid API response structure.");
+                }
+            } catch (error) {
+                console.error("Error fetching birth plan ideas:", error);
+                planResults.innerHTML = '<p>I\'m sorry, I couldn\'t generate ideas at the moment. Please check your connection and try again later.</p>';
+            } finally {
+                loadingIndicator.classList.add('hidden');
+                planResults.classList.remove('hidden');
+                planResults.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
         });
     </script>
 </body>
 </html>
+
+
+
