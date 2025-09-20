@@ -58,6 +58,39 @@
         .faq-question[aria-expanded="true"] svg.chevron {
             transform: rotate(180deg);
         }
+        
+        /* Styles for AI Planning Tools */
+        .plan-tab {
+            cursor: pointer;
+            padding: 0.75rem 1.5rem;
+            border-bottom: 3px solid transparent;
+            transition: all 0.3s ease;
+        }
+        .plan-tab.active {
+            border-color: #B98B73; /* Rust */
+            color: #3D403D;
+        }
+        .plan-content {
+            display: none;
+        }
+        .plan-content.active {
+            display: block;
+        }
+        /* Custom styles for generated content */
+        .plan-results h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+            color: #3D403D;
+        }
+        .plan-results ul {
+            list-style-position: inside;
+            padding-left: 1rem;
+        }
+         .plan-results li {
+            margin-bottom: 0.5rem;
+         }
     </style>
 </head>
 <body class="antialiased">
@@ -70,6 +103,7 @@
                 <a href="#about" class="text-charcoal/70 hover:text-sage transition" data-translate-key="navAbout">About</a>
                 <a href="#services" class="text-charcoal/70 hover:text-sage transition" data-translate-key="navServices">Services</a>
                 <a href="#reviews" class="text-charcoal/70 hover:text-sage transition" data-translate-key="navReviews">Reviews</a>
+                 <a href="#planning-tools" class="text-charcoal/70 hover:text-sage transition" data-translate-key="navPlanningTools">Planning Tools</a>
                 <a href="#faq" class="text-charcoal/70 hover:text-sage transition" data-translate-key="navFaq">FAQ</a>
                 <a href="#contact" class="bg-sage text-white px-5 py-2 rounded-full hover:bg-opacity-90 transition shadow-sm font-semibold" data-translate-key="navContact">Contact</a>
                  <button id="translate-btn" class="text-sm text-charcoal/70 hover:text-sage transition font-semibold" data-translate-key="translateBtn">Kreyòl</button>
@@ -86,6 +120,7 @@
             <a href="#about" class="block py-3 px-6 text-sm text-charcoal/80 hover:bg-sand" data-translate-key="navAbout">About</a>
             <a href="#services" class="block py-3 px-6 text-sm text-charcoal/80 hover:bg-sand" data-translate-key="navServices">Services</a>
             <a href="#reviews" class="block py-3 px-6 text-sm text-charcoal/80 hover:bg-sand" data-translate-key="navReviews">Reviews</a>
+            <a href="#planning-tools" class="block py-3 px-6 text-sm text-charcoal/80 hover:bg-sand" data-translate-key="navPlanningTools">Planning Tools</a>
             <a href="#faq" class="block py-3 px-6 text-sm text-charcoal/80 hover:bg-sand" data-translate-key="navFaq">FAQ</a>
             <a href="#contact" class="block py-3 px-6 text-sm text-charcoal/80 hover:bg-sand" data-translate-key="navContact">Contact</a>
         </div>
@@ -225,6 +260,91 @@
             </div>
         </section>
 
+        <!-- AI Planning Tools Section -->
+        <section id="planning-tools" class="bg-sand py-24 sm:py-32">
+            <div class="container mx-auto px-6 max-w-4xl">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl md:text-5xl font-bold text-charcoal" data-translate-key="planningToolsTitle">Planning Tools ✨</h2>
+                    <p class="mt-4 text-lg text-charcoal/80 max-w-3xl mx-auto" data-translate-key="planningToolsSubtitle">Use our AI-powered tools to help you mindfully prepare for your birth and postpartum journey.</p>
+                </div>
+
+                <div class="bg-cream rounded-lg shadow-lg">
+                    <!-- Tabs -->
+                    <div class="border-b border-sand flex">
+                        <div id="birth-plan-tab" class="plan-tab active font-semibold text-charcoal" data-translate-key="birthPlanTab">Birth Plan Ideas</div>
+                        <div id="postpartum-plan-tab" class="plan-tab font-semibold text-charcoal/70" data-translate-key="postpartumPlanTab">Postpartum Plan Ideas</div>
+                    </div>
+                    
+                    <div class="p-8 md:p-12">
+                        <!-- Birth Plan Content -->
+                        <div id="birth-plan-content" class="plan-content active">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <label for="atmosphere" class="block text-sm font-semibold text-charcoal mb-2" data-translate-key="bpAtmosphereLabel">What atmosphere do you envision?</label>
+                                    <textarea id="atmosphere" rows="3" class="w-full p-3 rounded-md border border-sand focus:ring-sage focus:border-sage transition" placeholder="e.g., calm and quiet, with dim lights and soft music..." data-translate-key="bpAtmospherePlaceholder" data-translate-type="placeholder"></textarea>
+                                </div>
+                                <div>
+                                    <label for="comfort" class="block text-sm font-semibold text-charcoal mb-2" data-translate-key="bpComfortLabel">Priorities for comfort/pain management?</label>
+                                    <textarea id="comfort" rows="3" class="w-full p-3 rounded-md border border-sand focus:ring-sage focus:border-sage transition" placeholder="e.g., hoping to use natural methods like breathing and movement..." data-translate-key="bpComfortPlaceholder" data-translate-type="placeholder"></textarea>
+                                </div>
+                                <div>
+                                    <label for="partner" class="block text-sm font-semibold text-charcoal mb-2" data-translate-key="bpPartnerLabel">How would you like your partner involved?</label>
+                                    <textarea id="partner" rows="3" class="w-full p-3 rounded-md border border-sand focus:ring-sage focus:border-sage transition" placeholder="e.g., providing hands-on support, words of encouragement..." data-translate-key="bpPartnerPlaceholder" data-translate-type="placeholder"></textarea>
+                                </div>
+                                <div>
+                                    <label for="anxiety" class="block text-sm font-semibold text-charcoal mb-2" data-translate-key="bpAnxietyLabel">Is there anything you're anxious about?</label>
+                                    <textarea id="anxiety" rows="3" class="w-full p-3 rounded-md border border-sand focus:ring-sage focus:border-sage transition" placeholder="e.g., the pain, not knowing what to expect, hospital policies..." data-translate-key="bpAnxietyPlaceholder" data-translate-type="placeholder"></textarea>
+                                </div>
+                            </div>
+                            <div class="mt-8 text-center">
+                                <button id="generate-birth-plan-btn" class="bg-rust text-white px-8 py-4 rounded-full font-semibold hover:bg-opacity-90 transition shadow-lg transform hover:scale-105 inline-flex items-center gap-2">
+                                    <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456zM16.898 20.562L16.25 22.5l-.648-1.938a2.25 2.25 0 01-1.465-1.465L12 18.75l1.938-.648a2.25 2.25 0 011.465-1.465L17.25 15l.648 1.938a2.25 2.25 0 011.465 1.465L21.25 18.75l-1.938.648a2.25 2.25 0 01-1.465 1.465z" /></svg>
+                                    <span data-translate-key="bpGenerateBtn">✨ Get Birth Plan Ideas</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Postpartum Plan Content -->
+                        <div id="postpartum-plan-content" class="plan-content">
+                             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <label for="pp-support" class="block text-sm font-semibold text-charcoal mb-2" data-translate-key="ppSupportLabel">Who is in your support system?</label>
+                                    <textarea id="pp-support" rows="3" class="w-full p-3 rounded-md border border-sand focus:ring-sage focus:border-sage transition" placeholder="e.g., my partner, my mom who will visit, a few close friends..." data-translate-key="ppSupportPlaceholder" data-translate-type="placeholder"></textarea>
+                                </div>
+                                <div>
+                                    <label for="pp-feeding" class="block text-sm font-semibold text-charcoal mb-2" data-translate-key="ppFeedingLabel">What are your thoughts on feeding?</label>
+                                    <textarea id="pp-feeding" rows="3" class="w-full p-3 rounded-md border border-sand focus:ring-sage focus:border-sage transition" placeholder="e.g., I hope to breastfeed, planning to pump, formula feeding..." data-translate-key="ppFeedingPlaceholder" data-translate-type="placeholder"></textarea>
+                                </div>
+                                <div>
+                                    <label for="pp-selfcare" class="block text-sm font-semibold text-charcoal mb-2" data-translate-key="ppSelfCareLabel">How will you make time for self-care?</label>
+                                    <textarea id="pp-selfcare" rows="3" class="w-full p-3 rounded-md border border-sand focus:ring-sage focus:border-sage transition" placeholder="e.g., daily showers, short walks, my partner taking the baby for an hour..." data-translate-key="ppSelfCarePlaceholder" data-translate-type="placeholder"></textarea>
+                                </div>
+                                <div>
+                                    <label for="pp-concerns" class="block text-sm font-semibold text-charcoal mb-2" data-translate-key="ppConcernsLabel">What are your biggest concerns?</label>
+                                    <textarea id="pp-concerns" rows="3" class="w-full p-3 rounded-md border border-sand focus:ring-sage focus:border-sage transition" placeholder="e.g., lack of sleep, postpartum depression, feeling isolated..." data-translate-key="ppConcernsPlaceholder" data-translate-type="placeholder"></textarea>
+                                </div>
+                            </div>
+                             <div class="mt-8 text-center">
+                                <button id="generate-postpartum-plan-btn" class="bg-rust text-white px-8 py-4 rounded-full font-semibold hover:bg-opacity-90 transition shadow-lg transform hover:scale-105 inline-flex items-center gap-2">
+                                    <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456zM16.898 20.562L16.25 22.5l-.648-1.938a2.25 2.25 0 01-1.465-1.465L12 18.75l1.938-.648a2.25 2.25 0 011.465-1.465L17.25 15l.648 1.938a2.25 2.25 0 011.465 1.465L21.25 18.75l-1.938.648a2.25 2.25 0 01-1.465 1.465z" /></svg>
+                                    <span data-translate-key="ppGenerateBtn">✨ Get Postpartum Plan Ideas</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="loading-indicator" class="hidden text-center mt-8">
+                    <div class="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-sage"></div>
+                    <p class="mt-2 text-charcoal/80" data-translate-key="bpLoading">Thinking... our AI doula is crafting some ideas for you.</p>
+                </div>
+
+                <div class="plan-results hidden mt-12 bg-white p-8 md:p-10 rounded-lg shadow-inner prose-lg max-w-none text-charcoal">
+                    <!-- Gemini API results will be injected here -->
+                </div>
+            </div>
+        </section>
+
         <!-- Share Your Experience Section -->
         <section id="leave-testimonial" class="bg-cream py-24 sm:py-32">
             <div class="container mx-auto px-6 text-center">
@@ -313,6 +433,7 @@
                 navAbout: "About",
                 navServices: "Services",
                 navReviews: "Reviews",
+                navPlanningTools: "Planning Tools",
                 navFaq: "FAQ",
                 navContact: "Contact",
                 translateBtn: "Kreyòl",
@@ -347,6 +468,29 @@
                 review1Author: "- Jessica & Tom, Park Slope",
                 review2Text: `"As a partner, I felt so much more useful and confident with Anie's guidance. She taught me how to provide effective support and worked with us as a team. Her postpartum visit was also incredibly helpful."`,
                 review2Author: "- David L., Williamsburg",
+                planningToolsTitle: "Planning Tools ✨",
+                planningToolsSubtitle: "Use our AI-powered tools to help you mindfully prepare for your birth and postpartum journey.",
+                birthPlanTab: "Birth Plan Ideas",
+                postpartumPlanTab: "Postpartum Plan Ideas",
+                bpAtmosphereLabel: "What atmosphere do you envision?",
+                bpAtmospherePlaceholder: "e.g., calm and quiet, with dim lights and soft music...",
+                bpComfortLabel: "Priorities for comfort/pain management?",
+                bpComfortPlaceholder: "e.g., hoping to use natural methods like breathing and movement...",
+                bpPartnerLabel: "How would you like your partner involved?",
+                bpPartnerPlaceholder: "e.g., providing hands-on support, words of encouragement...",
+                bpAnxietyLabel: "Is there anything you're anxious about?",
+                bpAnxietyPlaceholder: "e.g., the pain, not knowing what to expect, hospital policies...",
+                bpGenerateBtn: "✨ Get Birth Plan Ideas",
+                bpLoading: "Thinking... our AI doula is crafting some ideas for you.",
+                ppSupportLabel: "Who is in your support system?",
+                ppSupportPlaceholder: "e.g., my partner, my mom who will visit, a few close friends...",
+                ppFeedingLabel: "What are your thoughts on feeding?",
+                ppFeedingPlaceholder: "e.g., I hope to breastfeed, planning to pump, formula feeding...",
+                ppSelfCareLabel: "How will you make time for self-care?",
+                ppSelfCarePlaceholder: "e.g., daily showers, short walks, my partner taking the baby for an hour...",
+                ppConcernsLabel: "What are your biggest concerns?",
+                ppConcernsPlaceholder: "e.g., lack of sleep, postpartum depression, feeling isolated...",
+                ppGenerateBtn: "✨ Get Postpartum Plan Ideas",
                 testimonialFormTitle: "Share Your Experience",
                 testimonialFormSubtitle: "Your story can inspire and support other families on their journey. I would be honored if you would share a few words about your experience.",
                 faqTitle: "Frequently Asked Questions",
@@ -369,6 +513,7 @@
                 navAbout: "Sou Mwen",
                 navServices: "Sèvis",
                 navReviews: "Temwayaj",
+                navPlanningTools: "Zouti Planifikasyon",
                 navFaq: "Kesyon",
                 navContact: "Kontak",
                 translateBtn: "English",
@@ -403,6 +548,29 @@
                 review1Author: "- Jessica & Tom, Park Slope",
                 review2Text: `"Kòm yon patnè, mwen te santi m pi itil ak konfyans avèk konsèy Anie. Li te anseye m kijan pou m bay sipò efikas epi li te travay avèk nou kòm yon ekip. Vizit apre akouchman li te ekstrèmman itil tou."`,
                 review2Author: "- David L., Williamsburg",
+                planningToolsTitle: "Zouti Planifikasyon ✨",
+                planningToolsSubtitle: "Sèvi ak zouti AI nou yo pou ede w prepare w avèk konsyans pou vwayaj akouchman ak apre akouchman w la.",
+                birthPlanTab: "Lide Plan Akouchman",
+                postpartumPlanTab: "Lide Plan Postpartum",
+                bpAtmosphereLabel: "Ki atmosfè ou anvizaje?",
+                bpAtmospherePlaceholder: "egzanp, kalm ak trankil, ak limyè fèb ak mizik dous...",
+                bpComfortLabel: "Priyorite pou konfò/jesyon doulè?",
+                bpComfortPlaceholder: "egzanp, espere itilize metòd natyèl tankou respire ak mouvman...",
+                bpPartnerLabel: "Kijan ou ta renmen patnè w patisipe?",
+                bpPartnerPlaceholder: "egzanp, bay sipò pratik, mo ankourajman...",
+                bpAnxietyLabel: "Èske gen yon bagay ou enkyè pou li?",
+                bpAnxietyPlaceholder: "egzanp, doulè a, pa konnen kisa pou atann, politik lopital...",
+                bpGenerateBtn: "✨ Jwenn Lide Plan Akouchman",
+                bpLoading: "Nap reflechi... doula AI nou an ap kreye kèk lide pou ou.",
+                ppSupportLabel: "Kiyès ki nan sistèm sipò ou a?",
+                ppSupportPlaceholder: "egzanp, patnè mwen, manman m ki pral vizite, kèk zanmi pwòch...",
+                ppFeedingLabel: "Ki sa ou panse sou bay manje?",
+                ppFeedingPlaceholder: "egzanp, mwen espere bay tete, planifye ponpe, bay lèt fòmil...",
+                ppSelfCareLabel: "Kijan ou pral fè tan pou pran swen tèt ou?",
+                ppSelfCarePlaceholder: "egzanp, douch chak jou, ti mache, patnè mwen pran tibebe a pou inèdtan...",
+                ppConcernsLabel: "Ki pi gwo enkyetid ou yo?",
+                ppConcernsPlaceholder: "egzanp, mank dòmi, depresyon apre akouchman, santi w izole...",
+                ppGenerateBtn: "✨ Jwenn Lide Plan Postpartum",
                 testimonialFormTitle: "Pataje Eksperyans Ou",
                 testimonialFormSubtitle: "Istwa w la ka enspire ak sipòte lòt fanmi nan vwayaj yo. Mwen ta onore si w ta pataje kèk mo sou eksperyans ou.",
                 faqTitle: "Kesyon yo Poze Souvan",
@@ -411,7 +579,7 @@
                 faq2Question: "Èske yon doula ranplase patnè mwen an?",
                 faq2Answer: "Absoliman non! Wòl yon doula se sipòte tout ekip akouchman an, enkli patnè a. Mwen travay ansanm ak patnè w la pou ede l patisipe jan l vle, sijere fason li ka ede epi bay rasirans pou li ka jwi eksperyans lan san presyon.",
                 faq3Question: "Kilè mwen ta dwe anboche yon doula?",
-                faq3Answer: "Se yon bon lide pou kòmanse chèche yon doula pandan dezyèm trimès ou a. Sa ba ou anpil tan pou entèvyouve kèk kandida epi jwenn yon moun ou konekte avèk li. Li pèmèt tou tan pou nou bati yon relasyon epi fè reyinyon prenatal nou yo san nou pa santi nou prese.",
+                faq3Answer: "Se yon bon lide pou kòmense chèche yon doula pandan dezyèm trimès ou a. Sa ba ou anpil tan pou entèvyouve kèk kandida epi jwenn yon moun ou konekte avèk li. Li pèmèt tou tan pou nou bati yon relasyon epi fè reyinyon prenatal nou yo san nou pa santi nou prese.",
                 contactTitle: "Pare pou w santi w gen plis konfyans sou akouchman w la?",
                 contactSubtitle: "Mwen ofri yon konsiltasyon gratis san obligasyon pou wè si nou se yon bon match. Ann pale sou espwa ou genyen pou akouchman w ak kijan mwen ka sipòte w.",
                 contactBtn: "Voye Imèl pou yon Konsiltasyon Gratis",
@@ -479,6 +647,127 @@
                 answer.classList.toggle('hidden');
             });
         });
+
+        // --- Gemini API Planning Tools ---
+        const birthPlanTab = document.getElementById('birth-plan-tab');
+        const postpartumPlanTab = document.getElementById('postpartum-plan-tab');
+        const birthPlanContent = document.getElementById('birth-plan-content');
+        const postpartumPlanContent = document.getElementById('postpartum-plan-content');
+        
+        const generateBirthPlanBtn = document.getElementById('generate-birth-plan-btn');
+        const generatePostpartumPlanBtn = document.getElementById('generate-postpartum-plan-btn');
+        const loadingIndicator = document.getElementById('loading-indicator');
+        const planResults = document.querySelector('.plan-results');
+
+        // Tab functionality
+        birthPlanTab.addEventListener('click', () => {
+            birthPlanTab.classList.add('active');
+            postpartumPlanTab.classList.remove('active');
+            birthPlanContent.classList.add('active');
+            postpartumPlanContent.classList.remove('active');
+        });
+
+        postpartumPlanTab.addEventListener('click', () => {
+            postpartumPlanTab.classList.add('active');
+            birthPlanTab.classList.remove('active');
+            postpartumPlanContent.classList.add('active');
+            birthPlanContent.classList.remove('active');
+        });
+
+
+        // Simple markdown to HTML converter
+        function convertMarkdownToHTML(markdownText) {
+            return markdownText
+                .replace(/### (.*$)/gim, '<h3>$1</h3>')
+                .replace(/\* (.*$)/gim, '<ul><li>$1</li></ul>')
+                .replace(/<\/ul>\n<ul>/gim, '');
+        }
+
+        const callGeminiAPI = async (payload, retries = 3, delay = 1000) => {
+            const apiUrl = 'https://api.oneroot.media'; // Using your live proxy server
+
+            for (let i = 0; i < retries; i++) {
+                try {
+                    const response = await fetch(apiUrl, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+                    if (!response.ok) {
+                        const errorText = await response.text();
+                        throw new Error(`HTTP error! Status: ${response.status}. Response: ${errorText}`);
+                    }
+                    return await response.json();
+                } catch (error) {
+                    if (i === retries - 1) throw error;
+                    await new Promise(res => setTimeout(res, delay));
+                    delay *= 2; // Exponential backoff
+                }
+            }
+        };
+
+        const handleApiCall = async (userQuery, systemPrompt) => {
+            loadingIndicator.classList.remove('hidden');
+            planResults.classList.add('hidden');
+            planResults.innerHTML = '';
+
+            const payload = {
+                contents: [{ role: "user", parts: [{ text: userQuery }] }],
+                systemInstruction: { parts: [{ text: systemPrompt }] },
+            };
+
+            try {
+                const result = await callGeminiAPI(payload);
+                const text = result.candidates?.[0]?.content?.parts?.[0]?.text;
+                if (text) {
+                    planResults.innerHTML = convertMarkdownToHTML(text);
+                } else {
+                    throw new Error("Invalid API response. No text was returned.");
+                }
+            } catch (error) {
+                console.error("Error calling Gemini API:", error);
+                planResults.innerHTML = `<p class="text-red-700 font-semibold">I'm sorry, I couldn't generate ideas at the moment. Please try again later.</p>`;
+            } finally {
+                loadingIndicator.classList.add('hidden');
+                planResults.classList.remove('hidden');
+                planResults.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+        };
+        
+        generateBirthPlanBtn.addEventListener('click', () => {
+            const atmosphere = document.getElementById('atmosphere').value.trim();
+            const comfort = document.getElementById('comfort').value.trim();
+            const partner = document.getElementById('partner').value.trim();
+            const anxiety = document.getElementById('anxiety').value.trim();
+
+            const systemPrompt = "You are a warm, compassionate, and experienced doula. Your goal is to provide gentle, empowering, and evidence-based suggestions for a birth plan. Use supportive and non-judgmental language. Format your response in Markdown, using '###' for headings and '*' for bullet points. Do not give medical advice. Use phrases like 'you might consider' or 'it can be helpful to discuss' instead of 'you should'. Start with a brief, warm introduction.";
+            const userQuery = `Help me brainstorm some ideas for my birth plan. Here are my thoughts:
+            - Atmosphere: ${atmosphere || 'Not specified'}
+            - Comfort/Pain Management: ${comfort || 'Not specified'}
+            - Partner's Role: ${partner || 'Not specified'}
+            - Anxieties: ${anxiety || 'Not specified'}
+            Please provide gentle suggestions I can discuss with my care provider, formatted in Markdown.`;
+
+            handleApiCall(userQuery, systemPrompt);
+        });
+
+        generatePostpartumPlanBtn.addEventListener('click', () => {
+            const support = document.getElementById('pp-support').value.trim();
+            const feeding = document.getElementById('pp-feeding').value.trim();
+            const selfcare = document.getElementById('pp-selfcare').value.trim();
+            const concerns = document.getElementById('pp-concerns').value.trim();
+
+            const systemPrompt = "You are a warm, compassionate, and experienced postpartum doula. Your goal is to help expecting parents create a nurturing and realistic postpartum plan. Provide gentle, empowering, and practical suggestions. Use supportive and non-judgmental language. Format your response in Markdown, using '###' for headings and '*' for bullet points. Do not give medical advice. Use phrases like 'you might find it helpful to' or 'many families plan for'. Start with a brief, warm introduction about the importance of a postpartum plan.";
+            const userQuery = `Help me brainstorm some ideas for my postpartum plan. Here are my thoughts:
+            - My support system: ${support || 'Not specified'}
+            - My thoughts on feeding: ${feeding || 'Not specified'}
+            - Ideas for self-care: ${selfcare || 'Not specified'}
+            - My biggest concerns: ${concerns || 'Not specified'}
+            Please provide gentle suggestions to help me prepare for a restful and supported postpartum period, formatted in Markdown.`;
+            
+            handleApiCall(userQuery, systemPrompt);
+        });
+
     </script>
 </body>
 </html>
