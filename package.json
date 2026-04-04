@@ -1,8 +1,10 @@
 {
   "name": "Aniedotcare",
   "version": "1.0.0",
+  "type": "module",
   "scripts": {
-    "build:css": "tailwindcss -i ./src/styles.css -o ./dist/styles.css --minify"
+    "build:css": "tailwindcss -i ./src/styles.css -o ./dist/styles.css --minify",
+    "test": "node --test tests/*.test.js"
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.18",
