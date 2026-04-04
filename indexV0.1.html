@@ -943,9 +943,20 @@
         });
 
 
+        // Helper function to escape HTML to prevent XSS
+        function escapeHTML(str) {
+            return str
+                .replace(/&/g, "&amp;")
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;")
+                .replace(/"/g, "&quot;")
+                .replace(/'/g, "&#39;");
+        }
+
         // Simple markdown to HTML converter
         function convertMarkdownToHTML(markdownText) {
-            return markdownText
+            const escapedText = escapeHTML(markdownText);
+            return escapedText
                 .replace(/### (.*$)/gim, '<h3>$1</h3>')
                 .replace(/\* (.*$)/gim, '<ul><li>$1</li></ul>')
                 .replace(/<\/ul>\n<ul>/gim, '')
