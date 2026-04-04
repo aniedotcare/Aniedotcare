@@ -503,7 +503,10 @@
         </div>
     </footer>
 
-    <script>
+    <script type="module">
+        import { convertMarkdownToHTML } from './src/utils.js';
+        window.convertMarkdownToHTML = convertMarkdownToHTML;
+
         // --- TRANSLATION SCRIPT ---
         const translations = {
             en: {
@@ -752,14 +755,6 @@
             birthPlanContent.classList.remove('active');
         });
 
-
-        // Simple markdown to HTML converter
-        function convertMarkdownToHTML(markdownText) {
-            return markdownText
-                .replace(/### (.*$)/gim, '<h3>$1</h3>')
-                .replace(/\* (.*$)/gim, '<ul><li>$1</li></ul>')
-                .replace(/<\/ul>\n<ul>/gim, '');
-        }
 
         const callGeminiAPI = async (payload, retries = 3, delay = 1000) => {
             const apiUrl = 'https://api.oneroot.media'; // Using your live proxy server
