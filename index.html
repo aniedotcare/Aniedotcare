@@ -671,12 +671,16 @@
         let currentLanguage = 'en';
         const translateBtn = document.getElementById('translate-btn');
         const translateBtnMobile = document.getElementById('translate-btn-mobile');
-        const translatableElements = document.querySelectorAll('[data-translate-key]');
+
+        // Cache DOM query results and pre-cache dataset values for translation
+        const translatableElements = Array.from(document.querySelectorAll('[data-translate-key]')).map(el => ({
+            el,
+            key: el.dataset.translateKey,
+            type: el.dataset.translateType
+        }));
 
         const translatePage = () => {
-            translatableElements.forEach(el => {
-                const key = el.dataset.translateKey;
-                const type = el.dataset.translateType;
+            translatableElements.forEach(({ el, key, type }) => {
                 const translation = translations[currentLanguage][key];
 
                 if (translation) {
