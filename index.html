@@ -29,6 +29,21 @@
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              sage: '#A8B8A2',
+              sand: '#EAE2D9',
+              rust: '#B98B73',
+              cream: '#FBF9F6',
+              charcoal: '#3D403D',
+            }
+          }
+        }
+      }
+    </script>
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -92,22 +107,11 @@
     <style>
         body {
             font-family: 'Montserrat', sans-serif;
-            background-color: #FBF9F6; /* Cream */
-            color: #3D403D; /* Charcoal */
             overflow-x: hidden; /* Prevents horizontal scrolling */
         }
         h1, h2, h3, h4, h5, h6 {
             font-family: 'Playfair Display', serif;
         }
-        .bg-sage { background-color: #A8B8A2; }
-        .text-sage { color: #A8B8A2; }
-        .border-sage { border-color: #A8B8A2; }
-        .bg-sand { background-color: #EAE2D9; }
-        .text-sand { color: #EAE2D9; }
-        .bg-rust { background-color: #B98B73; }
-        .text-rust { color: #B98B73; }
-        .bg-cream { background-color: #FBF9F6; }
-        .text-charcoal { color: #3D403D; }
 
         .faq-question[aria-expanded="true"] svg.chevron {
             transform: rotate(180deg);
@@ -147,7 +151,7 @@
          }
     </style>
 </head>
-<body class="antialiased">
+<body class="antialiased bg-cream text-charcoal">
 
     <!-- Header -->
     <header class="bg-cream/80 backdrop-blur-lg sticky top-0 z-50 shadow-sm">
