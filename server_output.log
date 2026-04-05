@@ -1,0 +1,6 @@
+127.0.0.1 - - [05/Apr/2026 17:34:35] "GET /index.html HTTP/1.1" 200 -
+127.0.0.1 - - [05/Apr/2026 17:34:35] "GET /images/profilepic.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [05/Apr/2026 17:34:35] "GET /src/utils.js HTTP/1.1" 200 -
+127.0.0.1 - - [05/Apr/2026 17:35:29] "GET /index.html HTTP/1.1" 200 -
+127.0.0.1 - - [05/Apr/2026 17:35:29] "GET /images/profilepic.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [05/Apr/2026 17:35:30] "GET /src/utils.js HTTP/1.1" 200 -
