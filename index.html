@@ -408,14 +408,14 @@
 
                 <div class="bg-cream rounded-lg shadow-lg">
                     <!-- Tabs -->
-                    <div class="border-b border-sand flex">
-                        <div id="birth-plan-tab" class="plan-tab active font-semibold text-charcoal" data-translate-key="birthPlanTab">Birth Plan Ideas</div>
-                        <div id="postpartum-plan-tab" class="plan-tab font-semibold text-charcoal/70" data-translate-key="postpartumPlanTab">Postpartum Plan Ideas</div>
+                    <div class="border-b border-sand flex" role="tablist" aria-label="Planning Tools Tabs">
+                        <button id="birth-plan-tab" role="tab" aria-selected="true" aria-controls="birth-plan-content" class="plan-tab active font-semibold text-charcoal focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sage focus-visible:-outline-offset-2" data-translate-key="birthPlanTab">Birth Plan Ideas</button>
+                        <button id="postpartum-plan-tab" role="tab" aria-selected="false" aria-controls="postpartum-plan-content" class="plan-tab font-semibold text-charcoal/70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sage focus-visible:-outline-offset-2" data-translate-key="postpartumPlanTab">Postpartum Plan Ideas</button>
                     </div>
                     
                     <div class="p-8 md:p-12">
                         <!-- Birth Plan Content -->
-                        <div id="birth-plan-content" class="plan-content active">
+                        <div id="birth-plan-content" role="tabpanel" aria-labelledby="birth-plan-tab" class="plan-content active">
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 <div>
                                     <label for="atmosphere" class="block text-sm font-semibold text-charcoal mb-2" data-translate-key="bpAtmosphereLabel">What atmosphere do you envision?</label>
@@ -443,7 +443,7 @@
                         </div>
 
                         <!-- Postpartum Plan Content -->
-                        <div id="postpartum-plan-content" class="plan-content">
+                        <div id="postpartum-plan-content" role="tabpanel" aria-labelledby="postpartum-plan-tab" class="plan-content">
                              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 <div>
                                     <label for="pp-support" class="block text-sm font-semibold text-charcoal mb-2" data-translate-key="ppSupportLabel">Who is in your support system?</label>
@@ -849,14 +849,18 @@
         // Tab functionality
         birthPlanTab.addEventListener('click', () => {
             birthPlanTab.classList.add('active');
+            birthPlanTab.setAttribute('aria-selected', 'true');
             postpartumPlanTab.classList.remove('active');
+            postpartumPlanTab.setAttribute('aria-selected', 'false');
             birthPlanContent.classList.add('active');
             postpartumPlanContent.classList.remove('active');
         });
 
         postpartumPlanTab.addEventListener('click', () => {
             postpartumPlanTab.classList.add('active');
+            postpartumPlanTab.setAttribute('aria-selected', 'true');
             birthPlanTab.classList.remove('active');
+            birthPlanTab.setAttribute('aria-selected', 'false');
             postpartumPlanContent.classList.add('active');
             birthPlanContent.classList.remove('active');
         });
