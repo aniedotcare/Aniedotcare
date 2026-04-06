@@ -408,9 +408,9 @@
 
                 <div class="bg-cream rounded-lg shadow-lg">
                     <!-- Tabs -->
-                    <div class="border-b border-sand flex">
-                        <div id="birth-plan-tab" class="plan-tab active font-semibold text-charcoal" data-translate-key="birthPlanTab">Birth Plan Ideas</div>
-                        <div id="postpartum-plan-tab" class="plan-tab font-semibold text-charcoal/70" data-translate-key="postpartumPlanTab">Postpartum Plan Ideas</div>
+                    <div class="border-b border-sand flex" role="tablist">
+                        <button id="birth-plan-tab" role="tab" aria-selected="true" aria-controls="birth-plan-content" class="plan-tab active font-semibold text-charcoal focus-visible:ring-2 focus-visible:ring-sage focus:outline-none" data-translate-key="birthPlanTab">Birth Plan Ideas</button>
+                        <button id="postpartum-plan-tab" role="tab" aria-selected="false" aria-controls="postpartum-plan-content" class="plan-tab font-semibold text-charcoal/70 focus-visible:ring-2 focus-visible:ring-sage focus:outline-none" data-translate-key="postpartumPlanTab">Postpartum Plan Ideas</button>
                     </div>
                     
                     <div class="p-8 md:p-12">
@@ -850,6 +850,8 @@
         birthPlanTab.addEventListener('click', () => {
             birthPlanTab.classList.add('active');
             postpartumPlanTab.classList.remove('active');
+            birthPlanTab.setAttribute('aria-selected', 'true');
+            postpartumPlanTab.setAttribute('aria-selected', 'false');
             birthPlanContent.classList.add('active');
             postpartumPlanContent.classList.remove('active');
         });
@@ -857,6 +859,8 @@
         postpartumPlanTab.addEventListener('click', () => {
             postpartumPlanTab.classList.add('active');
             birthPlanTab.classList.remove('active');
+            postpartumPlanTab.setAttribute('aria-selected', 'true');
+            birthPlanTab.setAttribute('aria-selected', 'false');
             postpartumPlanContent.classList.add('active');
             birthPlanContent.classList.remove('active');
         });
