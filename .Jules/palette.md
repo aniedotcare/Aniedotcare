@@ -1,0 +1,3 @@
+## 2026-04-07 - Add ARIA attributes to mobile menu toggle
+**Learning:** Found an accessibility issue pattern where the mobile menu toggle button, containing an icon, was missing an `aria-label`, `aria-controls`, and dynamic `aria-expanded` attributes. This meant screen reader users would not have the necessary context for the button or its current state.
+**Action:** Always check icon-only buttons for missing `aria-label` attributes and ensure that any button controlling the visibility of other elements correctly updates the `aria-expanded` attribute based on state.
