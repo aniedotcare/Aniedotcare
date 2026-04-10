@@ -1,0 +1,3 @@
+## 2025-05-18 - Removing `focus:outline-none` on Icon-Only Buttons
+**Learning:** Using `focus:outline-none` on icon-only buttons removes all visual indication of focus for keyboard users, making the app highly inaccessible. It's crucial to always provide a visual focus indicator, especially for elements without text labels where the visual context is everything.
+**Action:** Replaced `focus:outline-none` with Tailwind's `focus-visible:ring-2` to only show the outline when the user is navigating via keyboard, preserving the desired mouse UX while meeting accessibility standards. Included `aria-label`, `aria-expanded`, and `aria-controls` for screen reader context.
