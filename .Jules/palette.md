@@ -1,0 +1,3 @@
+## 2024-05-24 - Accessible Focus Indicators on Mobile Navigation
+**Learning:** Icon-only buttons often use `focus:outline-none` to remove default browser outlines, which critically harms keyboard accessibility by removing the focus indicator entirely. Also, missing `aria-label`s on icon-only buttons prevent screen readers from understanding the button's purpose.
+**Action:** Replace `focus:outline-none` with `focus:outline-none focus-visible:ring-2 focus-visible:ring-sage rounded` to preserve keyboard focus indicators without impacting mouse users. Always ensure icon-only buttons include an `aria-label` describing their action.
