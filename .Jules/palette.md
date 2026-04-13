@@ -1,0 +1,3 @@
+## 2024-04-13 - Icon-Only Mobile Menu Button Accessibility
+**Learning:** Found a critical accessibility pattern missing in the mobile menu button. Icon-only interactive elements often lack context for screen readers and can be difficult to use with keyboard navigation if styled with bare `focus:outline-none`.
+**Action:** When implementing icon-only buttons, always add an `aria-label` to describe the action, set `aria-hidden="true"` on the decorative SVG, and use `focus-visible` classes (like `focus-visible:ring-2 focus-visible:ring-sage`) instead of `focus:outline-none` to preserve keyboard focus indicators without degrading the mouse click experience.
