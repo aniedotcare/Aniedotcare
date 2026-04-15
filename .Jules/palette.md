@@ -1,0 +1,3 @@
+## 2025-05-15 - Icon-only Interactive Element Accessibility Pattern
+**Learning:** Found a recurring pattern where icon-only buttons (like the mobile menu toggle) were missing critical ARIA attributes and relied solely on generic outline hiding (`focus:outline-none`) without alternative visible focus indicators.
+**Action:** When creating or fixing icon-only buttons that toggle other elements, always ensure they have: 1) `aria-label` describing the action, 2) `aria-hidden="true"` on the internal icon (e.g. SVG), 3) visible focus states using `focus-visible` utility classes instead of plain outline removal, and 4) JavaScript to dynamically maintain `aria-expanded` and `aria-controls` synchronicity with the target element's visibility.
