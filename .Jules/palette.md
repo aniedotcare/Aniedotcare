@@ -1,0 +1,3 @@
+## 2026-04-19 - [Mobile Menu Accessibility]
+**Learning:** For icon-only mobile menu toggle buttons, using Tailwind's `focus:outline-none` without an alternative significantly impairs keyboard accessibility. Such buttons must have `aria-label` for screen readers, `aria-expanded` updated via JavaScript to indicate state, `aria-controls` pointing to the menu, and `aria-hidden="true"` on the inner SVG.
+**Action:** Replace `focus:outline-none` with `focus-visible:ring-2` classes to preserve focus indicators for keyboard navigation, and ensure JavaScript correctly manages the `aria-expanded` attribute.
