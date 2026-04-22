@@ -1,0 +1,3 @@
+## 2024-05-18 - Missing ARIA Labels and Focus Fallbacks on Icon Buttons
+**Learning:** Found a pattern where icon-only interactive elements (like the mobile menu toggle) lack `aria-label`s, rendering them inaccessible to screen readers, and rely solely on `focus:outline-none` which removes keyboard navigation cues.
+**Action:** When working on interactive UI elements, ensure icon-only buttons include `aria-label` (and `aria-hidden` on the SVG) and always provide an accessible focus fallback using Tailwind's `focus-visible` (e.g., `focus-visible:ring-2 focus-visible:ring-sage`) when suppressing the default outline.
