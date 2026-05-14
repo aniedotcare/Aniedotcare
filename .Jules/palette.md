@@ -1,0 +1,3 @@
+## 2026-05-14 - Enhance Mobile Menu Accessibility
+**Learning:** Using `focus:outline-none` removes visual focus indicators for keyboard users, harming accessibility. It's crucial to pair it with `focus-visible` classes (like `focus-visible:ring-2 focus-visible:ring-sage`) to specifically preserve focus rings during keyboard navigation while hiding them for mouse clicks. Additionally, ensuring interactive elements have `aria-expanded` updated via JS state keeps screen readers synchronized with the UI.
+**Action:** Always check for `focus-visible` alternatives when stripping default outlines, and remember to programmatically update ARIA states like `aria-expanded` to reflect dynamic visibility changes.
