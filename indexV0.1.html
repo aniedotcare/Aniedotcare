@@ -237,8 +237,8 @@
             <!-- Mobile Menu Button -->
             <div class="lg:hidden flex items-center gap-4">
                 <button id="translate-btn-mobile" class="text-xs font-bold text-terra uppercase tracking-widest" data-translate-key="translateBtnMobile">Kreyòl</button>
-                <button id="menu-btn" class="text-forest focus:outline-none p-2">
-                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"/></svg>
+                <button id="menu-btn" class="text-forest focus-visible:ring-2 focus-visible:ring-forest rounded-sm p-2" aria-label="Toggle mobile menu" aria-controls="mobile-menu" aria-expanded="false">
+                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"/></svg>
                 </button>
             </div>
         </nav>
@@ -886,6 +886,8 @@
         
         function toggleMenu() {
             mobileMenu.classList.toggle('hidden');
+            const isExpanded = !mobileMenu.classList.contains('hidden');
+            menuBtn.setAttribute('aria-expanded', isExpanded);
         }
 
         menuBtn.addEventListener('click', toggleMenu);
@@ -894,6 +896,7 @@
         mobileMenu.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => {
                 mobileMenu.classList.add('hidden');
+                menuBtn.setAttribute('aria-expanded', 'false');
             });
         });
 
