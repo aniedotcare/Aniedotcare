@@ -1,0 +1,3 @@
+## 2026-05-24 - [UX Improvement] Added Accessibility to Mobile Menu Button
+**Learning:** Mobile menu buttons frequently lack proper ARIA labels and keyboard focus indicators. The Tailwind `focus:outline-none` class removes default focus rings, which is detrimental to keyboard navigation unless accompanied by alternative indicators like `focus-visible:ring`.
+**Action:** Always ensure icon-only interactive elements have an `aria-label`, hide the internal SVG with `aria-hidden="true"`, maintain accurate `aria-expanded` attributes via JavaScript, and apply `focus-visible` classes (e.g., `focus-visible:ring-2 focus-visible:ring-sage`) to preserve visual focus indicators specifically for keyboard navigation.
