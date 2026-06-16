@@ -1,0 +1,3 @@
+## 2024-05-18 - [Mobile Menu ARIA Expansion Update]
+**Learning:** For interactive UI elements like custom hamburger menus that toggle visibility of a container, the `aria-expanded` state must be managed programmatically to stay in sync. In `index.html`, simply setting the attribute on load was insufficient; the script had to be patched to correctly compute the inverse of the previous state during toggle actions.
+**Action:** Always inspect the exact JS event listeners linked to custom interactive components to ensure dynamic ARIA properties accurately reflect visual state changes on user interaction.
