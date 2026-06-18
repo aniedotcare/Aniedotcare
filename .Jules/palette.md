@@ -1,0 +1,5 @@
+## 2024-05-17 - Keyboard Accessible Icons
+
+**Learning:** When building responsive menus or interactive icons, adding standard `aria-label`s and `aria-expanded` toggle logic is critical for screen readers, but keyboard users are left struggling if `focus:outline-none` is applied without alternative focus indicators. This app heavily uses Tailwind's `focus:outline-none` to override default browser outlines, which effectively breaks visual keyboard navigation for sighted users who rely on tab navigation. Furthermore, screen readers can sometimes double-read icon buttons if the inner `<svg>` lacks `aria-hidden="true"`.
+
+**Action:** Whenever implementing icon-only buttons (like mobile hamburger menus or close buttons), always combine `aria-label`, dynamic `aria-expanded`/`aria-controls` states (managed via JS), and `aria-hidden="true"` on the SVG itself. Crucially, replace pure `focus:outline-none` with `focus:outline-none focus-visible:ring-2` (using a specific theme color, e.g., `focus-visible:ring-sage`) to preserve the visual focus ring strictly for keyboard navigation while keeping mouse clicks clean.
