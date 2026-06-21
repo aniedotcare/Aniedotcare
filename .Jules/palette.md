@@ -1,0 +1,3 @@
+## 2026-06-21 - Mobile Menu Accessibility
+**Learning:** The mobile menu button was missing ARIA labels and a keyboard focus indicator. When making interactive elements accessible, it's important to replace `focus:outline-none` with `focus-visible:ring-2` (or similar) to maintain a visual focus indicator for keyboard users. Furthermore, `aria-expanded` needs to be dynamically updated when the menu opens and closes.
+**Action:** Add `aria-label`, `aria-controls`, and `aria-expanded` attributes to the button. Ensure `focus-visible` classes are used. Dynamically update `aria-expanded` via JavaScript when the menu's visibility changes.
