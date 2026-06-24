@@ -1,0 +1,3 @@
+## 2025-06-24 - Accessibility improvements for mobile menu buttons
+**Learning:** Icon-only interactive elements in the application needed standard aria labels, and visually hidden icons to not confuse screenreaders, as well as preserving keyboard focus accessibility styles (via Tailwind focus-visible), since `focus:outline-none` was used which completely hid visual focus on mobile menus.
+**Action:** Replace `focus:outline-none` with `focus-visible:ring-2 focus-visible:ring-sage rounded` for keyboard access and add `aria-label`, `aria-controls`, `aria-expanded`, and `aria-hidden="true"` to icon SVGs. Update JS logic to handle `aria-expanded` toggle correctly for semantic correctness.
