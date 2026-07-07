@@ -1,0 +1,3 @@
+## 2024-05-15 - Icon-only Interactive Elements and Focus States
+**Learning:** Icon-only interactive elements must have an `aria-label` describing their action, `aria-hidden="true"` set on the internal SVG icon, and maintain accurate `aria-controls` and `aria-expanded` attributes via JavaScript if they toggle the visibility of other elements. Additionally, `focus:outline-none` should be accompanied by `focus-visible` classes to preserve keyboard navigation focus indicators.
+**Action:** Ensure all future icon-only buttons include these ARIA attributes and that dynamic state toggles update the corresponding ARIA state in JavaScript. Use Tailwind's `focus-visible` for focus indicators.
